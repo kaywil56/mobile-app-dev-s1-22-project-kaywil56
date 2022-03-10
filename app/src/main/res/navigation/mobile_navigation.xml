@@ -46,6 +46,9 @@
     <action
         android:id="@+id/action_home_fragment_to_translator_fragment"
         app:destination="@+id/navigation_translator" />
+        <action
+            android:id="@+id/action_home_fragment_to_quiz_fragment"
+            app:destination="@+id/navigation_quiz" />
     </fragment>
 
     <fragment
@@ -53,5 +56,11 @@
         android:name="op.mobile.app.dev.willkj8.travelling.ui.translator.TranslatorFragment"
         android:label="Translator"
         tools:layout="@layout/fragment_translator" />
+
+    <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="op.mobile.app.dev.willkj8.travelling.ui.quiz.QuizFragment"
+        android:label="Translator"
+        tools:layout="@layout/fragment_quiz" />
 
 </navigation>
