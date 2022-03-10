@@ -17,11 +17,17 @@ class LoginFragment : Fragment() {
     ): View {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
-        val btnLogin: Button = view.findViewById(R.id.btn_login) // Get a reference to button in fragment_login.xml
+        val btnLogin: Button = view.findViewById(R.id.btn_login)
+        val btnToRegister: Button = view.findViewById(R.id.btn_to_register)
 
         btnLogin.setOnClickListener {
             val action = LoginFragmentDirections
                 .actionLoginFragmentToHomeFragment()
+            view?.findNavController()?.navigate(action)
+        }
+        btnToRegister.setOnClickListener {
+            val action = LoginFragmentDirections
+                .actionLoginFragmentToRegisterFragment()
             view?.findNavController()?.navigate(action)
         }
 
