@@ -19,6 +19,7 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         val btnToTranslator: Button = view.findViewById(R.id.btn_to_translator)
         val btnToQuiz: Button = view.findViewById(R.id.btn_to_quiz)
+        val btnToSettings: Button = view.findViewById(R.id.btn_to_settings)
 
         btnToTranslator.setOnClickListener {
             val action = HomeFragmentDirections
@@ -30,6 +31,12 @@ class HomeFragment : Fragment() {
                 .actionHomeFragmentToQuizFragment()
             view?.findNavController()?.navigate(action)
         }
+        btnToSettings.setOnClickListener {
+            val action = HomeFragmentDirections
+                .actionHomeFragmentToSettingsFragment()
+            view?.findNavController()?.navigate(action)
+        }
+
         return view
     }
 }
