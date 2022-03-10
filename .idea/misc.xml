@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kaywi/Desktop/mappdev/mobile-app-dev-s1-22-project-kaywil56/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/kaywi/Desktop/mappdev/mobile-app-dev-s1-22-project-kaywil56/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/kaywi/Desktop/mappdev/mobile-app-dev-s1-22-project-kaywil56/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/kaywi/Desktop/mappdev/mobile-app-dev-s1-22-project-kaywil56/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Users/kaywi/Desktop/mappdev/mobile-app-dev-s1-22-project-kaywil56/app/src/main/res/layout/fragment_splash.xml" value="0.25" />
         <entry key="..\:/Users/kaywi/Desktop/mobile/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/kaywi/Desktop/mobile/app/src/main/res/layout/fragment_login.xml" value="0.33" />
       </map>

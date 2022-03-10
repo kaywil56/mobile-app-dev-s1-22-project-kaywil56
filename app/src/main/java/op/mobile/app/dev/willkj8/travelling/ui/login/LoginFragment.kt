@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
 
 class LoginFragment : Fragment() {
@@ -13,6 +15,16 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+
+        val btnLogin: Button = view.findViewById(R.id.btn_login) // Get a reference to button in fragment_login.xml
+
+        btnLogin.setOnClickListener {
+            val action = LoginFragmentDirections
+                .actionLoginFragmentToHomeFragment()
+            view?.findNavController()?.navigate(action)
+        }
+
+        return view
     }
 }
