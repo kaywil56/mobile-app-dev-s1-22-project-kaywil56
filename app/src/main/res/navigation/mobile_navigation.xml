@@ -43,15 +43,10 @@
         android:name="op.mobile.app.dev.willkj8.travelling.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
-    <action
-        android:id="@+id/action_home_fragment_to_translator_fragment"
-        app:destination="@+id/navigation_translator" />
         <action
-            android:id="@+id/action_home_fragment_to_quiz_fragment"
-            app:destination="@+id/navigation_quiz" />
-        <action
-            android:id="@+id/action_home_fragment_to_settings_fragment"
-            app:destination="@+id/navigation_settings" />
+            android:id="@+id/action_home_fragment_to_tools_fragment"
+            app:destination="@+id/navigation_tools" />
+
     </fragment>
 
     <fragment
@@ -59,6 +54,22 @@
         android:name="op.mobile.app.dev.willkj8.travelling.ui.translator.TranslatorFragment"
         android:label="Translator"
         tools:layout="@layout/fragment_translator" />
+
+    <fragment
+        android:id="@+id/navigation_tools"
+        android:name="op.mobile.app.dev.willkj8.travelling.ui.tools.ToolsFragment"
+        android:label="Tools"
+        tools:layout="@layout/fragment_tools" >
+    <action
+        android:id="@+id/action_tools_fragment_to_translator_fragment"
+        app:destination="@+id/navigation_translator" />
+    <action
+        android:id="@+id/action_tools_fragment_to_quiz_fragment"
+        app:destination="@+id/navigation_quiz" />
+    <action
+        android:id="@+id/action_tools_fragment_to_settings_fragment"
+        app:destination="@+id/navigation_settings" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_quiz"
