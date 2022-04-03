@@ -1,9 +1,9 @@
-package op.mobile.app.dev.willkj8.travelling
+package op.mobile.app.dev.willkj8.travelling.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_URL = "https://gist.githubusercontent.com/Grayson-Orr/49223bcae755ef9479b3150182dc125e/"
+private const val BASE_URL = "https://gist.githubusercontent.com/Kaywil56/ce3ee63ffdf15a7f7e07193ba7c4a77c/"
 
 object ServiceInstance {
     private val retrofit by lazy {
