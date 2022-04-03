@@ -18,17 +18,11 @@ class ToolsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_tools, container, false)
 
         val btnToTranslator: Button = view.findViewById(R.id.btn_to_translator)
-        val btnToQuiz: Button = view.findViewById(R.id.btn_to_quiz)
         val btnToSettings: Button = view.findViewById(R.id.btn_to_settings)
 
         btnToTranslator.setOnClickListener {
             val action = ToolsFragmentDirections
                 .actionToolsFragmentToTranslatorFragment()
-            view?.findNavController()?.navigate(action)
-        }
-        btnToQuiz.setOnClickListener {
-            val action = ToolsFragmentDirections
-                .actionToolsFragmentToQuizFragment()
             view?.findNavController()?.navigate(action)
         }
         btnToSettings.setOnClickListener {

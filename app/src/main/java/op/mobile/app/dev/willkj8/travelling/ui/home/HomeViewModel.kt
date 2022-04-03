@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import op.mobile.app.dev.willkj8.travelling.Country
-import op.mobile.app.dev.willkj8.travelling.ServiceInstance.retrofitService
-import op.mobile.app.dev.willkj8.travelling.ServiceStatus
+import op.mobile.app.dev.willkj8.travelling.model.Country
+import op.mobile.app.dev.willkj8.travelling.api.ServiceInstance.retrofitService
+import op.mobile.app.dev.willkj8.travelling.api.ServiceStatus
 
 class HomeViewModel : ViewModel() {
     private val _status = MutableLiveData<ServiceStatus>()

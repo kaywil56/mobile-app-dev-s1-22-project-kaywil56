@@ -4,41 +4,60 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
+import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentHomeBinding
-import op.mobile.app.dev.willkj8.travelling.ui.login.LoginFragmentDirections
+import op.mobile.app.dev.willkj8.travelling.helpers.IOnClickListener
+import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.CountryRVAdapter
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), IOnClickListener {
+    private lateinit var binding: FragmentHomeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val btnToTools: Button = view.findViewById(R.id.btn_to_tools)
-
-        btnToTools.setOnClickListener {
-            val action = HomeFragmentDirections
-                .actionHomeFragmentToToolsFragment()
-            view?.findNavController()?.navigate(action)
-        }
-
-        val binding: FragmentHomeBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_home, container, false
+    ): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_home,
+            container,
+            false
         )
 
-        val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        val viewModel: HomeViewModel by viewModels()
+
+        /**
+         * This disables the back button. You can not go to the
+         * previous Fragment
+         */
+        activity?.onBackPressedDispatcher?.addCallback(this) {}
+
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             homeViewModel = viewModel
+
+            rvCountries.adapter = CountryRVAdapter(this@HomeFragment)
+
             return root
         }
+    }
 
-        return view
+    /**
+     * Implementing the interface that allows you to click on a
+     * RecyclerView item. It gets the Country object bound to that item
+     * and is passed to the QuizFragment. This is declared in mobile_navigation.xml
+     * using the argument tag
+     */
+    override fun onItemClick(position: Int) {
+        val item = binding.homeViewModel!!.response.value!![position]
+        val action = HomeFragmentDirections.actionHomeFragmentToQuizFragment(item)
+       findNavController().navigate(action)
     }
 }
