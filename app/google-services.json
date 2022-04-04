@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "42055643600",
+    "project_id": "willkj8-travelling",
+    "storage_bucket": "willkj8-travelling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42055643600:android:7e53f1b83c82375f9949d5",
+        "android_client_info": {
+          "package_name": "op.mobile.app.dev.willkj8.travelling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42055643600-bb7tcfq17tfhlk255n5b4k315ocatq4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5HnP1YiRZCXoC-QUWDCnwnHbeeifRtZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42055643600-bb7tcfq17tfhlk255n5b4k315ocatq4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
