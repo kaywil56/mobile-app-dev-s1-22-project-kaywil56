@@ -32,18 +32,36 @@ class RegisterFragment: Fragment() {
 
         btnRegister.setOnClickListener {
             val email = etEmailAddress.text.toString()
+            val valid = isValidEmail(email)
             val password = etPassword.text.toString()
             val confirmPassword = etConfirmPassword.text.toString()
 
-            // Set of validation rules
-            // You will write some code here for your formative assessment
+            when {
+                email.isEmpty() ->
+                    etEmailAddress.error = "Email is required."
+                !valid ->
+                    etEmailAddress.error = "Invalid format."
+                password.isEmpty() ->
+                    etPassword.error = "Password is required."
+                password.length < 8 ->
+                    etPassword.error = "Password must be at least 8 characters."
+                password != confirmPassword ->
+                    etConfirmPassword.error = "Password and does not match."
+                else -> {
+                    register(email, password)
+                }
+            }
         }
-
         return view
     }
 
+    // Checks for valid email, returns true or false
+    private fun isValidEmail(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
     /**
-     * This function registers a new user using Firebase authentication
+     * This function register a new user using Firebase authentication
      *
      * @param email the new user's email address
      * @param password the new user's password
