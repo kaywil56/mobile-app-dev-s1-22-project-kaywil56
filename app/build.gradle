@@ -39,7 +39,9 @@ android {
 }
 
 dependencies {
-
+    implementation 'androidx.room:room-runtime:2.2.6'
+    implementation 'androidx.room:room-ktx:2.2.6'
+    kapt 'androidx.room:room-compiler:2.2.6'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'com.airbnb.android:lottie:3.4.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -58,4 +60,6 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:27.1.0') // Manages all Firebase library versions by specifying only one version
     implementation 'com.google.firebase:firebase-auth:21.0.1' // Firebase authentication library. If we omit the version, it will be 27.1.0, not 21.01.1
     implementation 'com.google.android.gms:play-services-auth:19.0.0' // Google Play services library
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 }
