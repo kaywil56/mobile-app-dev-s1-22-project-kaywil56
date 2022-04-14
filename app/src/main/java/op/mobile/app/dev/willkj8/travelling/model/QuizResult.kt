@@ -8,6 +8,9 @@ import androidx.room.PrimaryKey
 data class QuizResult(
     @ColumnInfo(name = "score")
     var score: Int,
+
+    @ColumnInfo(name = "country_id")
+    var countryId: Int,
 ){
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

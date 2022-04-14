@@ -50,6 +50,8 @@ abstract class QuizResultDb : RoomDatabase() {
 
         fun populateDb(quizResultDao: IQuizResultDao) {
             quizResultDao.deleteAll()
+            var result = QuizResult(0, 1)
+            quizResultDao.insert(result)
         }
     }
 }

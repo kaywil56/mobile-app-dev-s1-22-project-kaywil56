@@ -26,9 +26,9 @@ class QuizResultsFragment : Fragment() {
             false
         )
         val bundle = QuizResultsFragmentArgs.fromBundle(requireArguments())
-        val viewModelFactory = QuizResultsViewModelFactory(bundle.score, (activity?.applicationContext as QuizResultApplication).repository)
+        val viewModelFactory = QuizResultsViewModelFactory(bundle.score, bundle.countryId, (activity?.applicationContext as QuizResultApplication).repository)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(QuizResultsViewModel::class.java)
-        viewModel.insertQuizResultDetail(QuizResult(viewModel.score))
+        viewModel.insertQuizResultDetail(QuizResult(viewModel.score, viewModel.countryId))
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             quizResultsViewModel = viewModel

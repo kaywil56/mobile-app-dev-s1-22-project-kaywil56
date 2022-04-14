@@ -173,9 +173,11 @@ class QuizFragment : Fragment() {
      * the argument tag
      */
     private fun isFinished() {
+        println("Country ID: " + viewModel.country.id)
         val action = QuizFragmentDirections
             .actionQuizFragmentToQuizResultsFragment(
-                viewModel.score.value!!
+                viewModel.score.value!!,
+                viewModel.country.id
             )
         findNavController().navigate(action)
     }
