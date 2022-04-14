@@ -46,18 +46,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/iv_question"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="@dimen/height_150"-->
-<!--                    android:layout_marginStart="@dimen/margin_16"-->
-<!--                    android:layout_marginTop="@dimen/margin_24"-->
-<!--                    android:layout_marginEnd="@dimen/margin_16"-->
-<!--                    android:contentDescription="@{quizViewModel.answers[0]}"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:square_image="@{quizViewModel.quiz.img}" />-->
+                <ImageView
+                    android:id="@+id/iv_question"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_150"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:contentDescription="@{quizViewModel.answers[0]}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                     />
 
                 <TextView
                     android:id="@+id/tv_question"
@@ -71,7 +71,7 @@
                     android:textSize="@dimen/text_size_18"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_question" />
 
                 <RadioGroup
                     android:id="@+id/radio_btn_group_answers"

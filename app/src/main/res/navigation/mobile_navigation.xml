@@ -26,6 +26,9 @@
         <argument
             android:name="score"
             app:argType="integer" />
+        <argument
+            android:name="countryId"
+            app:argType="integer" />
     </fragment>
 
     <fragment

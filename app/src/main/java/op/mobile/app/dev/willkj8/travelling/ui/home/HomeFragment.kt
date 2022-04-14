@@ -8,12 +8,12 @@ import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentHomeBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.IOnClickListener
 import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.CountryRVAdapter
+import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.QuizResultRVAdapter
 
 class HomeFragment : Fragment(), IOnClickListener {
     private lateinit var binding: FragmentHomeBinding

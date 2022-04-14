@@ -8,7 +8,7 @@ import op.mobile.app.dev.willkj8.travelling.model.Country
 class QuizViewModelFactory(
     private val country: Country
 ) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(QuizViewModel::class.java))
             return QuizViewModel(country) as T
         throw IllegalArgumentException("Unknown ViewModel class")
