@@ -13,4 +13,9 @@ class QuizResultRespository(private val QuizResultDao: IQuizResultDao) {
         fun insertQuizResultDetail(quiz_result: QuizResult) {
             QuizResultDao.insert(quiz_result)
         }
+
+        @WorkerThread
+        fun deleteAllQuizResultsDetail() {
+            QuizResultDao.deleteAll()
+        }
 }

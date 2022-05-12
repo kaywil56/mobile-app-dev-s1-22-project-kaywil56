@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.map
 import java.io.IOException
 
 class SettingsManager(context: Context) {
-    private val dataStore: DataStore<androidx.datastore.preferences.Preferences> =
+    private val dataStore: DataStore<Preferences> =
         context.applicationContext.createDataStore(DATA_STORE_NAME)
 
     val uiModeFlow: Flow<UIMode> = dataStore.data.catch {
