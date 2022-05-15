@@ -6,9 +6,11 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
+import op.mobile.app.dev.willkj8.travelling.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {
     override fun onCreateView(
@@ -16,17 +18,23 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.fragment_splash, container, false)
+        val binding: FragmentSplashBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_splash,
+            container,
+            false
+        )
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 val action = SplashFragmentDirections
                     .actionSplashFragmentToLoginFragment()
-                view.findNavController().navigate(action)
+                view?.findNavController()?.navigate(action)
+                // Navigate from the splash screen to the login screen, i.e., create an action in mobile_navigation.xml
             },
             3000
         )
 
-        return view
+        return binding.root
     }
 }

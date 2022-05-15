@@ -8,4 +8,10 @@
     <string name="incorrect">Incorrect. %1$s was the correct answer</string>
     <string name="please_select_an_answer">Please select an answer</string>
     <string name="score">Score: %1$s</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="settings">Settings</string>
+    <string name="plus_one">Plus One</string>
+    <string name="reset">Reset</string>
 </resources>
