@@ -17,5 +17,6 @@ data class Country(
     val flagImg: String,
     val langCode: String,
     val phrases: List<String>,
-    val quiz: @RawValue List<Quiz> // Serialize List of Quiz
+    val quiz: @RawValue List<Quiz>, // Serialize List of Quiz
+    val attractions: @RawValue List<Attraction> // Serialize List of Attraction
 ) : Parcelable

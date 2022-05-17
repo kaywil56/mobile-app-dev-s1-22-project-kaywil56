@@ -94,8 +94,8 @@
             android:id="@+id/action_tools_fragment_to_translator_fragment"
             app:destination="@+id/navigation_translator" />
         <action
-            android:id="@+id/action_tools_fragment_to_settings_fragment"
-            app:destination="@+id/navigation_settings" />
+            android:id="@+id/action_tools_fragment_to_map_fragment"
+            app:destination="@+id/navigation_map" />
         <action
             android:id="@+id/action_tools_fragment_to_quiz_fragment"
             app:destination="@+id/navigation_quiz" />
@@ -112,5 +112,15 @@
         android:name="op.mobile.app.dev.willkj8.travelling.ui.dashboard.DashboardFragment"
         android:label="dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="op.mobile.app.dev.willkj8.travelling.ui.map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map">
+        <argument
+            android:name="attractions"
+            app:argType="op.mobile.app.dev.willkj8.travelling.model.Attraction[]" />
+    </fragment>
 
 </navigation>

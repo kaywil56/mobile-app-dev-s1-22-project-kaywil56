@@ -60,4 +60,11 @@ class HomeFragment : Fragment(), IOnClickListener {
         val action = HomeFragmentDirections.actionHomeFragmentToToolsFragment(item)
        findNavController().navigate(action)
     }
+
+//    override fun onItemClick(position: Int) {
+//        val item = binding.homeViewModel!!.response.value!![position]
+//        val action =
+//            HomeFragmentDirections.actionHomeFragmentToMapFragment(item.attractions.toTypedArray())
+//        findNavController().navigate(action)
+//    }
 }
