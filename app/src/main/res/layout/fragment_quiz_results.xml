@@ -29,6 +29,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+<!--        <TextView-->
+<!--            android:id="@+id/tv_display_email"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/margin_16"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="@dimen/margin_16"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@{@string/score(String.valueOf(quizResultsViewModel.email))}"-->
+<!--            android:textSize="@dimen/text_size_24"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_quiz_details"
             android:layout_width="384dp"
@@ -52,8 +66,7 @@
             android:text="Remove All"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="267dp"
-            tools:layout_editor_absoluteY="16dp"
-            android:onClick="@{() -> quizResultsViewModel.clearAll()}"/>
+            tools:layout_editor_absoluteY="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

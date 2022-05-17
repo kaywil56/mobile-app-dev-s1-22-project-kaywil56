@@ -57,7 +57,7 @@ class HomeFragment : Fragment(), IOnClickListener {
      */
     override fun onItemClick(position: Int) {
         val item = binding.homeViewModel!!.response.value!![position]
-        val action = HomeFragmentDirections.actionHomeFragmentToQuizFragment(item)
+        val action = HomeFragmentDirections.actionHomeFragmentToToolsFragment(item)
        findNavController().navigate(action)
     }
 }

@@ -5,31 +5,63 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
+import op.mobile.app.dev.willkj8.travelling.databinding.FragmentToolsBinding
 
 class ToolsFragment : Fragment() {
+    private lateinit var viewModel: ToolsViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_tools, container, false)
+        super.onCreateView(inflater, container, savedInstanceState)
+        val binding: FragmentToolsBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_tools,
+            container,
+            false
+        )
+        val viewModelFactory =
+            ToolsViewModelFactory(
+                ToolsFragmentArgs.fromBundle(requireArguments()).country
+            )
 
-        val btnToTranslator: Button = view.findViewById(R.id.btn_to_translator)
-        val btnToSettings: Button = view.findViewById(R.id.btn_to_settings)
+        viewModel = ViewModelProvider(
+            this,
+            viewModelFactory
+        ).get(ToolsViewModel::class.java)
 
-        btnToTranslator.setOnClickListener {
-            val action = ToolsFragmentDirections
-                .actionToolsFragmentToTranslatorFragment()
-            view?.findNavController()?.navigate(action)
+        binding.apply {
+            lifecycleOwner = viewLifecycleOwner
+            toolsViewModel = viewModel
+
+            btnToSettings.setOnClickListener {
+                val action = ToolsFragmentDirections
+                    .actionToolsFragmentToSettingsFragment()
+                view?.findNavController()
+                    ?.navigate(action)
+            }
+
+            btnToTranslator.setOnClickListener {
+                val action = ToolsFragmentDirections
+                    .actionToolsFragmentToTranslatorFragment()
+                view?.findNavController()
+                    ?.navigate(action)
+            }
+
+            btnToQuiz.setOnClickListener {
+                val action = ToolsFragmentDirections
+                    .actionToolsFragmentToQuizFragment(viewModel.country)
+                view?.findNavController()
+                    ?.navigate(action)
+            }
+            return root
         }
-        btnToSettings.setOnClickListener {
-            val action = ToolsFragmentDirections
-                .actionToolsFragmentToSettingsFragment()
-            view?.findNavController()?.navigate(action)
-        }
-        return view
     }
 }
