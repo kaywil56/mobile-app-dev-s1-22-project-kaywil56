@@ -6,7 +6,7 @@ import op.mobile.app.dev.willkj8.travelling.database.IQuizResultDao
 import op.mobile.app.dev.willkj8.travelling.model.QuizResult
 
 
-class QuizResultRespository(private val QuizResultDao: IQuizResultDao) {
+class QuizResultRepository(private val QuizResultDao: IQuizResultDao) {
         val allResultDetails: Flow<List<QuizResult>> = QuizResultDao.getAll()
 
         @WorkerThread
