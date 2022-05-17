@@ -22,7 +22,6 @@ class QuizResultsViewModel(_score: Int, _countryId: Int, _email: String, _userId
         repository.insertQuizResultDetail(quizResult)
     }
 
-
     fun clearAll() = CoroutineScope(Dispatchers.IO).launch {
         repository.deleteAllQuizResultsDetail()
     }
