@@ -13,7 +13,6 @@ import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentHomeBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.IOnClickListener
 import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.CountryRVAdapter
-import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.QuizResultRVAdapter
 
 class HomeFragment : Fragment(), IOnClickListener {
     private lateinit var binding: FragmentHomeBinding

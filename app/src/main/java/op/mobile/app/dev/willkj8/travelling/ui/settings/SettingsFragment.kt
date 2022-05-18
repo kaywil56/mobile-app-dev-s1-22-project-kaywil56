@@ -9,6 +9,7 @@ import op.mobile.app.dev.willkj8.travelling.R
 import androidx.appcompat.widget.SwitchCompat
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.maps.SupportMapFragment
 import kotlinx.coroutines.launch
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.UIMode
@@ -27,7 +28,7 @@ class SettingsFragment : Fragment() {
 
         val settingsManager = SettingsManager(requireContext())
         settingsManager.uiModeFlow.asLiveData().observe(viewLifecycleOwner) {
-            settingsManager.setCheckedUIMode(it, false, swToggleDarkMode)
+            settingsManager.setCheckedUIMode(it, false, swToggleDarkMode, null)
         }
 
         swToggleDarkMode.setOnCheckedChangeListener { _, isChecked ->
