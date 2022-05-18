@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import op.mobile.app.dev.willkj8.travelling.ui.map.MapFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
 
@@ -41,10 +42,11 @@ class MainActivity : AppCompatActivity() {
 
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
         //supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val settingsManager = SettingsManager(this)
         settingsManager.uiModeFlow.asLiveData().observe(this) {
-            settingsManager.setCheckedUIMode(it, true, null)
+            settingsManager.setCheckedUIMode(it, true, null, null)
         }
     }
 }

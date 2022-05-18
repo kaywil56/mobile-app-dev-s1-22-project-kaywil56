@@ -13,7 +13,6 @@ import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentHomeBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.IOnClickListener
 import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.CountryRVAdapter
-import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.QuizResultRVAdapter
 
 class HomeFragment : Fragment(), IOnClickListener {
     private lateinit var binding: FragmentHomeBinding
@@ -60,4 +59,11 @@ class HomeFragment : Fragment(), IOnClickListener {
         val action = HomeFragmentDirections.actionHomeFragmentToToolsFragment(item)
        findNavController().navigate(action)
     }
+
+//    override fun onItemClick(position: Int) {
+//        val item = binding.homeViewModel!!.response.value!![position]
+//        val action =
+//            HomeFragmentDirections.actionHomeFragmentToMapFragment(item.attractions.toTypedArray())
+//        findNavController().navigate(action)
+//    }
 }

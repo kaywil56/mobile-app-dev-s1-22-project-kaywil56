@@ -41,9 +41,9 @@ class ToolsFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             toolsViewModel = viewModel
 
-            btnToSettings.setOnClickListener {
+            btnToMap.setOnClickListener {
                 val action = ToolsFragmentDirections
-                    .actionToolsFragmentToSettingsFragment()
+                    .actionToolsFragmentToMapFragment(viewModel.country.attractions.toTypedArray())
                 view?.findNavController()
                     ?.navigate(action)
             }
