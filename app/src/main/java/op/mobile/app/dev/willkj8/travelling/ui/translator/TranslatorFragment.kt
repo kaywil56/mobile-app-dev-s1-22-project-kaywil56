@@ -18,9 +18,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-
 class TranslatorFragment : Fragment() {
     private val apiKey = "trnsl.1.1.20200329T025311Z.37f6897b8a99dbd9.bb42d876c007fde0812c365015625fde8c0f0163"
+    private lateinit var langsAdapter: ArrayAdapter<String>
+    private lateinit var items: Map<String, String>
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,28 +34,36 @@ class TranslatorFragment : Fragment() {
         val translateBtn: Button = view.findViewById(R.id.btn_submit)
 
         val key: String = apiKey
-        val text = inputText.text.toString().trim()
-        val lang = "en-ru"
         val ui = "en"
 
         val spinner: Spinner = view.findViewById(R.id.planets_spinner)
-        // Create an ArrayAdapter using the string array and a default spinner layout
+
+        fun <K, V> getKey(map: Map<K, V>, target: V): K? {
+            for ((key, value) in map)
+            {
+                if (target == value) {
+                    return key
+                }
+            }
+            return null
+        }
 
         retrofitServiceLangs.getLangs(key, ui).enqueue(object : Callback<Lang> {
             override fun onResponse(call: Call<Lang>, response: Response<Lang>) {
                 if (response.isSuccessful) {
-                    val items: Map<String, String> = response.body()!!.getLangs()!!
-                    Log.d(TAG, items.toString())
+                    items = response.body()!!.getLangs()!!
+                    val langsList:Array<String> = items.values.toTypedArray()
 
+                    langsAdapter = LangsAdapter(
+                        requireContext(),
+                        R.layout.spinner_item,
+                        langsList
+                    )
 
-//                    val langsAdapter = LangsAdapter(
-//                        context!!,
-//                        R.layout.spinner_item,
-//                        ArrayList(items)
-//                    )
-//
-//                    spinner.adapter = langsAdapter
-//                    Log.i(TAG, "post submitted to API." + response.body().toString())
+                    langsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    spinner.adapter = langsAdapter
+
+                    Log.i(TAG, "post submitted to API." + response.body().toString())
                 }
             }
 
@@ -65,11 +74,19 @@ class TranslatorFragment : Fragment() {
         })
 
         translateBtn.setOnClickListener {
+            val langSelected: String? = langsAdapter.getItem(spinner.selectedItemPosition)
+            val code = getKey(items, langSelected)
+            val lang = "en-$code"
+            val text = inputText.text.toString().trim()
+            Log.d("lang", lang)
             retrofitServiceTranslator.savePost(key, text, lang).enqueue(object : Callback<Translate> {
                 override fun onResponse(call: Call<Translate>, response: Response<Translate>) {
                     if (response.isSuccessful) {
                         translatedText.text = response.body().toString()
                         Log.i(TAG, "post submitted to API." + response.body().toString())
+                    }
+                    else{
+                        Log.d(TAG, "Was not successful" + response.body().toString())
                     }
                 }
 
