@@ -1,24 +1,19 @@
 package op.mobile.app.dev.willkj8.travelling.ui.quiz.results
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentQuizResultsBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.QuizResultRVAdapter
 import op.mobile.app.dev.willkj8.travelling.model.QuizResult
-import op.mobile.app.dev.willkj8.travelling.ui.tools.ToolsFragmentDirections
 
 
 class QuizResultsFragment : Fragment() {
@@ -36,7 +31,7 @@ class QuizResultsFragment : Fragment() {
             container,
             false
         )
-        val view: View = inflater.inflate(R.layout.fragment_quiz_results, container, false)
+
 
         auth = FirebaseAuth.getInstance()
         val email = auth.currentUser?.email.toString()

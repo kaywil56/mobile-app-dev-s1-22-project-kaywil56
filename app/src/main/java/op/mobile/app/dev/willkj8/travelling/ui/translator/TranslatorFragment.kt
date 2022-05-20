@@ -13,6 +13,7 @@ import op.mobile.app.dev.willkj8.travelling.api.LangsServiceInstance.retrofitSer
 import op.mobile.app.dev.willkj8.travelling.api.TranslateServiceInstance.retrofitServiceTranslator
 import op.mobile.app.dev.willkj8.travelling.model.Lang
 import op.mobile.app.dev.willkj8.travelling.model.Translate
+import op.mobile.app.dev.willkj8.travelling.ui.quiz.results.QuizResultsFragmentArgs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,6 +29,7 @@ class TranslatorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val view: View =  inflater.inflate(R.layout.fragment_translator, container, false)
+        val currentLangCode = TranslatorFragmentArgs.fromBundle(requireArguments()).lang
 
         val inputText: EditText = view.findViewById(R.id.et_translate)
         val translatedText: TextView = view.findViewById(R.id.tv_translated)
@@ -76,7 +78,7 @@ class TranslatorFragment : Fragment() {
         translateBtn.setOnClickListener {
             val langSelected: String? = langsAdapter.getItem(spinner.selectedItemPosition)
             val code = getKey(items, langSelected)
-            val lang = "en-$code"
+            val lang = "$code-$currentLangCode"
             val text = inputText.text.toString().trim()
             Log.d("lang", lang)
             retrofitServiceTranslator.savePost(key, text, lang).enqueue(object : Callback<Translate> {
