@@ -35,8 +35,6 @@ class TranslatorFragment : Fragment() {
         val translateBtn: Button = view.findViewById(R.id.btn_submit)
         val speechBtn: Button = view.findViewById(R.id.btn_speech)
 
-
-
         val key: String = apiKey
         val ui = "en"
 
@@ -89,6 +87,7 @@ class TranslatorFragment : Fragment() {
                 txt.isEmpty() ->
                     inputText.error = "Input is required."
                 else -> {
+                    Toast.makeText(context, "Attempting to translate text...", Toast.LENGTH_SHORT).show()
                     retrofitServiceTranslator.savePost(key, text, lang).enqueue(object : Callback<Translate> {
                         override fun onResponse(call: Call<Translate>, response: Response<Translate>) {
                             if (response.isSuccessful) {
