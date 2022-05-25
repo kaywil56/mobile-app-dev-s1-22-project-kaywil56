@@ -97,6 +97,7 @@ class TranslatorFragment : Fragment() {
                             }
                             else{
                                 Log.d(TAG, "Was not successful" + response.body().toString())
+                                inputText.error = "Invalid input."
                             }
                         }
 
