@@ -13,7 +13,6 @@ import op.mobile.app.dev.willkj8.travelling.api.LangsServiceInstance.retrofitSer
 import op.mobile.app.dev.willkj8.travelling.api.TranslateServiceInstance.retrofitServiceTranslator
 import op.mobile.app.dev.willkj8.travelling.model.Lang
 import op.mobile.app.dev.willkj8.travelling.model.Translate
-import op.mobile.app.dev.willkj8.travelling.ui.quiz.results.QuizResultsFragmentArgs
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,6 +33,9 @@ class TranslatorFragment : Fragment() {
         val inputText: EditText = view.findViewById(R.id.et_translate)
         val translatedText: TextView = view.findViewById(R.id.tv_translated)
         val translateBtn: Button = view.findViewById(R.id.btn_submit)
+        val speechBtn: Button = view.findViewById(R.id.btn_speech)
+
+
 
         val key: String = apiKey
         val ui = "en"
@@ -76,32 +78,53 @@ class TranslatorFragment : Fragment() {
         })
 
         translateBtn.setOnClickListener {
+            val txt = inputText.text.toString()
             val langSelected: String? = langsAdapter.getItem(spinner.selectedItemPosition)
             val code = getKey(items, langSelected)
             val lang = "$code-$currentLangCode"
             val text = inputText.text.toString().trim()
             Log.d("lang", lang)
-            retrofitServiceTranslator.savePost(key, text, lang).enqueue(object : Callback<Translate> {
-                override fun onResponse(call: Call<Translate>, response: Response<Translate>) {
-                    if (response.isSuccessful) {
-                        translatedText.text = response.body().toString()
-                        Log.i(TAG, "post submitted to API." + response.body().toString())
-                    }
-                    else{
-                        Log.d(TAG, "Was not successful" + response.body().toString())
-                    }
-                }
 
-                override fun onFailure(call: Call<Translate>, t: Throwable) {
-                    Log.e(TAG, "Unable to submit post to API.")
-                    Log.e(TAG, t.cause.toString())
+            when {
+                txt.isEmpty() ->
+                    inputText.error = "Input is required."
+                else -> {
+                    retrofitServiceTranslator.savePost(key, text, lang).enqueue(object : Callback<Translate> {
+                        override fun onResponse(call: Call<Translate>, response: Response<Translate>) {
+                            if (response.isSuccessful) {
+                                translatedText.text = response.body().toString()
+                                Log.i(TAG, "post submitted to API." + response.body().toString())
+                            }
+                            else{
+                                Log.d(TAG, "Was not successful" + response.body().toString())
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Translate>, t: Throwable) {
+                            Log.e(TAG, "Unable to submit post to API.")
+                            Log.e(TAG, t.cause.toString())
+                        }
+                    })
                 }
-            })
+            }
+        }
+
+        speechBtn.setOnClickListener{
+            val txt = inputText.text.toString()
+            when {
+                txt.isEmpty() ->
+                    inputText.error = "Input is required."
+                else -> {
+                    TxtToSpeech(requireContext(), translatedText.text.toString(), currentLangCode)
+                }
+            }
         }
 
         return view
     }
 }
+
+
 
 
 
