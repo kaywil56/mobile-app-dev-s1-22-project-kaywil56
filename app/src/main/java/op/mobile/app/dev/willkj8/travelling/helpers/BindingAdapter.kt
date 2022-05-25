@@ -27,6 +27,12 @@ fun setQuizResultListData(rv: RecyclerView, data: List<QuizResult>?) {
     adapter.submitList(data)
 }
 
+//@BindingAdapter("lang_list_data")
+//fun setLangListData() {
+//    val adapter = rv.adapter as LangsAdapter
+//    adapter.submitList(data)
+//}
+
 @BindingAdapter("service_status")
 fun setServiceStatus(tv: TextView, status: ServiceStatus?) {
     when (status) {

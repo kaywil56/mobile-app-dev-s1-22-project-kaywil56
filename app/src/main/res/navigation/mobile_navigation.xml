@@ -80,7 +80,11 @@
         android:id="@+id/navigation_translator"
         android:name="op.mobile.app.dev.willkj8.travelling.ui.translator.TranslatorFragment"
         android:label="Translator"
-        tools:layout="@layout/fragment_translator" />
+        tools:layout="@layout/fragment_translator" >
+        <argument
+            android:name="lang"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_tools"

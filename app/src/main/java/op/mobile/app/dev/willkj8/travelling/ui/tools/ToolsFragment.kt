@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -50,7 +49,7 @@ class ToolsFragment : Fragment() {
 
             btnToTranslator.setOnClickListener {
                 val action = ToolsFragmentDirections
-                    .actionToolsFragmentToTranslatorFragment()
+                    .actionToolsFragmentToTranslatorFragment(viewModel.country.langCode)
                 view?.findNavController()
                     ?.navigate(action)
             }
