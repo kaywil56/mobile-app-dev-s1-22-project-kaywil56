@@ -177,7 +177,8 @@ class QuizFragment : Fragment() {
         val action = QuizFragmentDirections
             .actionQuizFragmentToQuizResultsFragment(
                 viewModel.score.value!!,
-                viewModel.country.id
+                viewModel.country.id,
+                viewModel.country.name
             )
         findNavController().navigate(action)
     }

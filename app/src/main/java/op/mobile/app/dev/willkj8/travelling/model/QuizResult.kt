@@ -17,6 +17,9 @@ data class QuizResult(
 
     @ColumnInfo(name = "user_id")
     var userId: String,
+
+    @ColumnInfo(name = "country_name")
+    var countryName: String,
 ){
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

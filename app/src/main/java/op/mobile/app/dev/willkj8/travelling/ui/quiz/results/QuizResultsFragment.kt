@@ -32,17 +32,16 @@ class QuizResultsFragment : Fragment() {
             false
         )
 
-
         auth = FirebaseAuth.getInstance()
         val email = auth.currentUser?.email.toString()
         val userId = auth.currentUser?.uid.toString()
 
         val bundle = QuizResultsFragmentArgs.fromBundle(requireArguments())
-        val viewModelFactory = QuizResultsViewModelFactory(bundle.score, bundle.countryId, email, userId, (activity?.applicationContext as QuizResultApplication).repository)
+        val viewModelFactory = QuizResultsViewModelFactory(bundle.score, bundle.countryId, email, userId, bundle.countryName, (activity?.applicationContext as QuizResultApplication).repository)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(QuizResultsViewModel::class.java)
 
 
-        viewModel.insertQuizResultDetail(QuizResult(viewModel.score, viewModel.countryId, viewModel.email, viewModel.userId))
+        viewModel.insertQuizResultDetail(QuizResult(viewModel.score, viewModel.countryId, viewModel.email, viewModel.userId, viewModel.countryName))
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             quizResultsViewModel = viewModel

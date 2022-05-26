@@ -50,7 +50,7 @@ abstract class QuizResultDb : RoomDatabase() {
 
         fun populateDb(quizResultDao: IQuizResultDao) {
             quizResultDao.deleteAll()
-            var result = QuizResult(0, 1, "jdoe@mail.com", "abcdefg")
+            var result = QuizResult(0, 1, "jdoe@mail.com", "abcdefg", "China")
             quizResultDao.insert(result)
         }
     }
