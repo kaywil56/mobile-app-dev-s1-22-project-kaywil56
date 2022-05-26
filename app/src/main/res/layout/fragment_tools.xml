@@ -53,8 +53,27 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_to_quiz"
-        tools:layout_editor_absoluteY="221dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="221dp" />
+
+        <TextView
+            android:id="@+id/tv_phrase_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Phrase 1"
+            app:layout_constraintTop_toBottomOf="@id/btn_to_map"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="176dp" />
+
+        <TextView
+            android:id="@+id/tv_phrase_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Phrase 2"
+            app:layout_constraintTop_toBottomOf="@id/tv_phrase_one"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="176dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

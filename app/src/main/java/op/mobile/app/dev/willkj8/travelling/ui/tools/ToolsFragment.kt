@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -60,6 +61,10 @@ class ToolsFragment : Fragment() {
                 view?.findNavController()
                     ?.navigate(action)
             }
+
+            tvPhraseOne.text = viewModel.country.phrases[0]
+            tvPhraseTwo.text = viewModel.country.phrases[1]
+
             return root
         }
     }
