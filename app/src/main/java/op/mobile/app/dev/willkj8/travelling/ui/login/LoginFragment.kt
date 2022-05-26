@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import op.mobile.app.dev.willkj8.travelling.R
 
@@ -29,6 +30,9 @@ class LoginFragment : Fragment() {
         val etEmailAddress: EditText = view.findViewById(R.id.et_email_address)
         val etPassword: EditText = view.findViewById(R.id.et_password)
         val tvSignUp: TextView = view.findViewById(R.id.btn_to_sign_up)
+        val navMenu: BottomNavigationView = requireActivity().findViewById(R.id.nav_view)
+
+        navMenu.visibility = View.GONE
 
         btnLogin.setOnClickListener {
             val email = etEmailAddress.text.toString()
@@ -41,7 +45,7 @@ class LoginFragment : Fragment() {
                 password.isEmpty() ->
                     etPassword.error = "Password is required"
                 else -> {
-                    firebaseAuthSignInWithEmailAndPassword(email, password) // Call if validation rules pass
+                    firebaseAuthSignInWithEmailAndPassword(email, password, navMenu) // Call if validation rules pass
                 }
             }
         }
@@ -64,10 +68,11 @@ class LoginFragment : Fragment() {
      * @param email the user's email address
      * @param password the user's password
      */
-    private fun firebaseAuthSignInWithEmailAndPassword(email: String, password: String) {
+    private fun firebaseAuthSignInWithEmailAndPassword(email: String, password: String, navMenu: BottomNavigationView) {
         auth.signInWithEmailAndPassword(email, password) // In-built Firebase authentication function
             .addOnCompleteListener(requireActivity()) {
                 if (it.isSuccessful) {
+                    navMenu.visibility = View.VISIBLE
                     // Navigate to the home screen. Check mobile_navigation.xml for this action
                     val action =
                         LoginFragmentDirections

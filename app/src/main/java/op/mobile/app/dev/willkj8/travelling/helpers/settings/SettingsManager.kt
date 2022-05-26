@@ -8,6 +8,7 @@ import androidx.datastore.DataStore
 import androidx.datastore.preferences.*
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -87,6 +88,7 @@ class SettingsManager(val context: Context) {
             }
         }
     }
+
     companion object {
         private const val DATA_STORE_NAME = "settings.pref"
         private val IS_DARK_MODE = preferencesKey<Boolean>("is_dark_mode")
