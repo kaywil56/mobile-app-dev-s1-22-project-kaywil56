@@ -11,11 +11,12 @@ import op.mobile.app.dev.willkj8.travelling.model.QuizResult
 import op.mobile.app.dev.willkj8.travelling.repository.QuizResultRepository
 
 
-class QuizResultsViewModel(_score: Int, _countryId: Int, _email: String, _userId: String, private val repository: QuizResultRepository) : ViewModel() {
+class QuizResultsViewModel(_score: Int, _countryId: Int, _email: String, _userId: String, _countryName: String, private val repository: QuizResultRepository) : ViewModel() {
     var score : Int = _score
     var countryId: Int = _countryId
     var email: String = _email
     var userId: String = _userId
+    var countryName = _countryName
     val allResultDetails: LiveData<List<QuizResult>> = repository.allResultDetails.asLiveData()
 
     fun insertQuizResultDetail(quizResult: QuizResult) = CoroutineScope(Dispatchers.IO).launch {
