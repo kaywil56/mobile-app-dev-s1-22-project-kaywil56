@@ -32,8 +32,6 @@ class LoginFragment : Fragment() {
         val tvSignUp: TextView = view.findViewById(R.id.btn_to_sign_up)
         val navMenu: BottomNavigationView = requireActivity().findViewById(R.id.nav_view)
 
-        navMenu.visibility = View.GONE
-
         btnLogin.setOnClickListener {
             val email = etEmailAddress.text.toString()
             val password = etPassword.text.toString()

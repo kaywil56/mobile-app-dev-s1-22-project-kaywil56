@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.asLiveData
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import op.mobile.app.dev.willkj8.travelling.R
+import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
 
 /**
  * Class implements OnMapReadyCallback
@@ -88,5 +90,10 @@ class MapFragment : Fragment(), OnMapReadyCallback {
          * latitude and longitude coordinates
          */
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(initialPosition, defaultZoom))
+
+        val settingsManager = SettingsManager(requireContext())
+        settingsManager.uiModeFlow.asLiveData().observe(viewLifecycleOwner) {
+            settingsManager.setCheckedUIMode(it, false, null, googleMap)
+        }
     }
 }
