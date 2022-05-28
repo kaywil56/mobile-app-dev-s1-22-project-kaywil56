@@ -39,6 +39,7 @@ class TranslatorFragment : Fragment() {
         val ui = "en"
 
         val spinner: Spinner = view.findViewById(R.id.planets_spinner)
+        spinner.prompt = "Select a language"
 
         fun <K, V> getKey(map: Map<K, V>, target: V): K? {
             for ((key, value) in map)
