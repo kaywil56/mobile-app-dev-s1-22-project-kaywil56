@@ -62,8 +62,8 @@ class ToolsFragment : Fragment() {
                     ?.navigate(action)
             }
 
-            tvPhraseOne.text = viewModel.country.phrases[0]
-            tvPhraseTwo.text = viewModel.country.phrases[1]
+            tvPhraseOne.text = '"' + viewModel.country.phrases[0] + '"'
+            tvPhraseTwo.text = '"' + viewModel.country.phrases[1] + '"'
 
             return root
         }
