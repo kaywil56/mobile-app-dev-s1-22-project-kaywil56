@@ -9,61 +9,61 @@
 
     <Spinner
         android:id="@+id/planets_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="324dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-16dp" />
-
+         />
 
     <EditText
         android:id="@+id/et_translate"
-        android:layout_width="233dp"
-        android:layout_height="37dp"
+        android:layout_width="324dp"
+        android:layout_height="44dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
         android:drawablePadding="8dp"
         android:hint="type your word here..."
         android:inputType="text"
         android:singleLine="true"
         android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="132dp"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:text="Translate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_translate" />
 
     <TextView
         android:id="@+id/tv_translated"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
+        android:layout_width="324dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="8dp"
         android:text="Translated Text: "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
 
     <Button
         android:id="@+id/btn_speech"
-        android:layout_width="132dp"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:text="Text to speech"
         app:layout_constraintEnd_toEndOf="parent"

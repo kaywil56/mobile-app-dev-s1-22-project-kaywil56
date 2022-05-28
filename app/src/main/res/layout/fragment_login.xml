@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.login.LoginFragment">
 
-
     <TextView
         android:id="@+id/tv_header"
         android:layout_width="0dp"
