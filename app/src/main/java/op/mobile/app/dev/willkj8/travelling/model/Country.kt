@@ -4,12 +4,6 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
-/**
- * Unlike strings, integers and booleans, user defined objects can not be passed
- * between Fragments.
- *
- * Resource: https://developer.android.com/kotlin/parcelize
- */
 @Parcelize
 data class Country(
     val id: Int,
