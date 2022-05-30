@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:gravity="center"
-        android:text="Register"
+        android:text="@string/register"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +28,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Email Address"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_header" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_header"
+        android:autofillHints="email" />
 
     <EditText
         android:id="@+id/et_password"
@@ -42,11 +43,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_address" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email_address"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/et_confirm_password"
@@ -56,11 +58,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btn_register"
@@ -69,7 +72,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:text="Register"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

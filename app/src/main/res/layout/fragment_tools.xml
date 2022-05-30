@@ -15,7 +15,7 @@
         android:layout_height="fill_parent">
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="wrap_content">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -48,14 +48,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
-
+                    android:contentDescription="@string/translator_image" />
                 <TextView
                     android:id="@+id/tv_to_translator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Translator"
+                    android:textSize="20sp"
+                    android:text="@string/translator"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_translator"
@@ -94,14 +93,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
+                    android:contentDescription="@string/quiz_image" />
 
                 <TextView
                     android:id="@+id/tv_to_quiz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Quiz"
+                    android:textSize="20sp"
+                    android:text="@string/quiz"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_quiz"
@@ -140,14 +139,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
+                    android:contentDescription="@string/map_image" />
 
                 <TextView
                     android:id="@+id/tv_to_map"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Map"
+                    android:textSize="20sp"
+                    android:text="@string/map"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/iv_map"
@@ -163,8 +162,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_16"
-            android:text="Some popular phrases"
-            android:textSize="20dp"
+            android:text="@string/pop_phrases"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
