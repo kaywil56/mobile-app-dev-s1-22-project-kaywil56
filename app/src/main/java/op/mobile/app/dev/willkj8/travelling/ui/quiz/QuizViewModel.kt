@@ -30,7 +30,7 @@ class QuizViewModel(_country: Country) : ViewModel() {
     private val _time = MutableLiveData<Long>()
     private val time: LiveData<Long> get() = _time
 
-    lateinit var countDownTimer: CountDownTimer
+    private lateinit var countDownTimer: CountDownTimer
 
     val timeString = Transformations.map(time) {
         DateUtils.formatElapsedTime(it)

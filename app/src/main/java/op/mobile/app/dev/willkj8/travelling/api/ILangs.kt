@@ -4,9 +4,7 @@ import op.mobile.app.dev.willkj8.travelling.model.Lang
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
 import retrofit2.http.POST
-
 
 interface ILangs {
     @POST("/api/v1.5/tr.json/getLangs")

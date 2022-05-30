@@ -12,7 +12,6 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
