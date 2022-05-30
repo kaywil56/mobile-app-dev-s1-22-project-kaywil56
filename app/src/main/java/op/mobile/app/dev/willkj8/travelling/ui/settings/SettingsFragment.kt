@@ -4,22 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import op.mobile.app.dev.willkj8.travelling.R
-import androidx.appcompat.widget.SwitchCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentSettingsBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.UIMode
-import op.mobile.app.dev.willkj8.travelling.ui.home.HomeFragmentDirections
 
 class SettingsFragment : Fragment() {
     private lateinit var auth: FirebaseAuth

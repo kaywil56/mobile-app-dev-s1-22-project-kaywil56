@@ -1,6 +1,5 @@
 package op.mobile.app.dev.willkj8.travelling.helpers.settings
 
-
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
@@ -13,7 +12,6 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import op.mobile.app.dev.willkj8.travelling.R
 import java.io.IOException
-
 
 class SettingsManager(val context: Context) {
     private val dataStore: DataStore<Preferences> =
