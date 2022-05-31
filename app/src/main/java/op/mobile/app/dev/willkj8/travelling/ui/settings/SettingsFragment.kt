@@ -17,6 +17,11 @@ import op.mobile.app.dev.willkj8.travelling.databinding.FragmentSettingsBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.UIMode
 
+/**
+ * A Fragment class for *settings*.
+ *
+ * This class handles logic for the Settings fragment.
+ */
 class SettingsFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(

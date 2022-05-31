@@ -9,6 +9,12 @@ import op.mobile.app.dev.willkj8.travelling.model.Country
 import op.mobile.app.dev.willkj8.travelling.api.ServiceInstance.retrofitService
 import op.mobile.app.dev.willkj8.travelling.api.ServiceStatus
 
+
+/**
+ * A view model class for home.
+ *
+ * This class handles data related to the home ui.
+ */
 class HomeViewModel : ViewModel() {
     private val _status = MutableLiveData<ServiceStatus>()
     val status: LiveData<ServiceStatus> get() = _status

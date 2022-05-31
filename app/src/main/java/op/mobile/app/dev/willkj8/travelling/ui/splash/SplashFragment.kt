@@ -12,6 +12,11 @@ import androidx.navigation.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentSplashBinding
 
+/**
+ * A Fragment class for the *Splash*.
+ *
+ * This class handles logic for the splash screen.
+ */
 class SplashFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,

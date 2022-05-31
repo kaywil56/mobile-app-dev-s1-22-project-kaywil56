@@ -4,6 +4,11 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
+/**
+ * A data model class for the country.
+ *
+ * This class takes values from the get country's API request.
+ */
 @Parcelize
 data class Country(
     val id: Int,

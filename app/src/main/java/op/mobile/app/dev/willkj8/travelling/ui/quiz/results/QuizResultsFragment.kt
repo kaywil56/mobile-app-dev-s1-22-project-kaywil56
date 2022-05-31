@@ -15,7 +15,11 @@ import op.mobile.app.dev.willkj8.travelling.databinding.FragmentQuizResultsBindi
 import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.QuizResultRVAdapter
 import op.mobile.app.dev.willkj8.travelling.model.QuizResult
 
-
+/**
+ * A fragment class for the *Quiz Results* feature
+ *
+ * This class handles the logic for the quiz results
+ */
 class QuizResultsFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
 

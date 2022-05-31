@@ -4,6 +4,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import op.mobile.app.dev.willkj8.travelling.model.Country
 
+/**
+ * A view model factory class for the quiz.
+ *
+ * This class instantiates the quiz view model.
+ *
+ * @param country The selected country object.
+ */
 @Suppress("UNCHECKED_CAST")
 class QuizViewModelFactory(
     private val country: Country

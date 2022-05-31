@@ -12,6 +12,11 @@ import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import op.mobile.app.dev.willkj8.travelling.R
 
+/**
+ * A fragment class for register
+ *
+ * This class handles logic for the register feature
+ */
 class RegisterFragment: Fragment() {
     private lateinit var auth: FirebaseAuth
 
@@ -55,7 +60,11 @@ class RegisterFragment: Fragment() {
         return view
     }
 
-    // Checks for valid email, returns true or false
+    /**
+     * This function check for a valid email address
+     *
+     * @param email the email to be checked
+     */
     private fun isValidEmail(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }

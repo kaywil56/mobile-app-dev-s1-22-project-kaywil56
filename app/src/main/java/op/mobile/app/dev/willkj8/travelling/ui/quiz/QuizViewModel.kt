@@ -9,6 +9,13 @@ import androidx.lifecycle.ViewModel
 import op.mobile.app.dev.willkj8.travelling.model.Country
 import op.mobile.app.dev.willkj8.travelling.model.Quiz
 
+/**
+ * A view model class for the quiz.
+ *
+ * This class handles data related to the quiz ui.
+ *
+ * @param _country The selected country object
+ */
 class QuizViewModel(_country: Country) : ViewModel() {
     var country: Country = _country
 
@@ -41,20 +48,33 @@ class QuizViewModel(_country: Country) : ViewModel() {
         _score.value = 0
     }
 
+    /**
+     * This function increments the amount a questions that have been answered.
+     */
     fun addQuestionIdx() {
         _questionIdx.value = _questionIdx.value?.plus(1)
     }
 
+
+    /**
+     * This function adds 1 to the total score.
+     */
     fun addScore() {
         _score.value = _score.value?.plus(1)
     }
 
+    /**
+     * This function retrieves a question and shuffles the answers.
+     */
     fun setQuestion() {
         _quiz.value = country.quiz[_questionIdx.value!!]
         _answers.value = quiz.value?.answers?.toMutableList()
         _answers.value?.shuffle()
     }
 
+    /**
+     * This function starts a timer.
+     */
     fun startTimer() {
         countDownTimer = object : CountDownTimer(THREE_MINUTES, ONE_SECOND) {
             override fun onTick(millisUntilFinished: Long) {
@@ -69,10 +89,17 @@ class QuizViewModel(_country: Country) : ViewModel() {
         countDownTimer.start()
     }
 
+
+    /**
+     * This function sets the quiz to finished.
+     */
     fun isFinished() {
         _isFinished.value = true
     }
 
+    /**
+     * This function stops the timer.
+     */
     override fun onCleared() {
         super.onCleared()
         countDownTimer.cancel()

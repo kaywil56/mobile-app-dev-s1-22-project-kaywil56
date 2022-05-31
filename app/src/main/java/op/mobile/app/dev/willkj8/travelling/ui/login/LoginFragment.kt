@@ -14,6 +14,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import op.mobile.app.dev.willkj8.travelling.R
 
+/**
+ * A fragment class for login
+ *
+ * This class handles logic for the login feature
+ */
 class LoginFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
 

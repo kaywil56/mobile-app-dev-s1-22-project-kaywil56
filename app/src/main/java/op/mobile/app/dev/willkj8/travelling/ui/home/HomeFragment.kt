@@ -14,6 +14,11 @@ import op.mobile.app.dev.willkj8.travelling.databinding.FragmentHomeBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.IOnClickListener
 import op.mobile.app.dev.willkj8.travelling.helpers.recyclerview.CountryRVAdapter
 
+/**
+ * A fragment class for home
+ *
+ * This class handles logic for the home feature
+ */
 class HomeFragment : Fragment(), IOnClickListener {
     private lateinit var binding: FragmentHomeBinding
 
@@ -59,11 +64,4 @@ class HomeFragment : Fragment(), IOnClickListener {
         val action = HomeFragmentDirections.actionHomeFragmentToToolsFragment(item)
        findNavController().navigate(action)
     }
-
-//    override fun onItemClick(position: Int) {
-//        val item = binding.homeViewModel!!.response.value!![position]
-//        val action =
-//            HomeFragmentDirections.actionHomeFragmentToMapFragment(item.attractions.toTypedArray())
-//        findNavController().navigate(action)
-//    }
 }

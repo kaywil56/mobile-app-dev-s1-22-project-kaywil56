@@ -10,7 +10,6 @@ import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.MarkerInfoWindowBinding
 import op.mobile.app.dev.willkj8.travelling.model.Attraction
 
-
 /**
  * Class implements GoogleMap.InfoWindowAdapter. This class needs a reference
  * to a Context, i.e., MapFragment
@@ -30,8 +29,6 @@ class AttractionInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
     /**
      * Implementing member of GoogleMap.InfoWindowAdapter. Provides a
      * custom info window for a marker
-     *
-     * More information here - https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.InfoWindowAdapter#getInfoWindow
      */
     override fun getInfoWindow(marker: Marker): View {
         val attraction: Attraction = marker.tag as Attraction
@@ -41,11 +38,7 @@ class AttractionInfoWindow(context: Context) : GoogleMap.InfoWindowAdapter {
     }
 
     /**
-     * Implementing member of GoogleMap.InfoWindowAdapter. We are not concerned
-     * with this. However, it provides custom content for the default info window
-     * frame of a marker
-     *
-     * More information here - https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.InfoWindowAdapter#getInfoContents
+     * Implementing member of GoogleMap.InfoWindowAdapter.
      */
     override fun getInfoContents(marker: Marker): View? = null
 }

@@ -13,6 +13,11 @@ import androidx.navigation.fragment.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentQuizBinding
 
+/**
+ * A fragment class for the *Quiz* feature
+ *
+ * This class handles the logic for the quiz
+ */
 class QuizFragment : Fragment() {
     private lateinit var viewModel: QuizViewModel
 
@@ -149,11 +154,6 @@ class QuizFragment : Fragment() {
                         isFinished() // Quiz is finished
                     }
                 } else {
-                    /**
-                     * Self-directed learning:
-                     *
-                     * Display a message if a RadioButton is not clicked
-                     */
                     val text = "Please choose an option"
                     val duration = Toast.LENGTH_SHORT
 

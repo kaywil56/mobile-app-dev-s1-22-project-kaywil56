@@ -4,6 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * A data model class for quiz results.
+ *
+ * This class acts as a table for the quiz results DB
+ */
 @Entity(tableName = "quiz_result")
 data class QuizResult(
     @ColumnInfo(name = "score")

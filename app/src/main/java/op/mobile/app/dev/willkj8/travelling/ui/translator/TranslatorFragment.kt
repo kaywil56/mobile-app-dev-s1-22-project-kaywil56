@@ -17,11 +17,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
+/**
+ * A Fragment for the *Translator*.
+ *
+ * This class handles logic for the translator feature.
+ */
 class TranslatorFragment : Fragment() {
     private var apiKey = "trnsl.1.1.20200329T025311Z.37f6897b8a99dbd9.bb42d876c007fde0812c365015625fde8c0f0163"
     private lateinit var langsAdapter: ArrayAdapter<String>
     private lateinit var items: Map<String, String>
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -73,8 +78,22 @@ class TranslatorFragment : Fragment() {
         return view
     }
 
+    /**
+     * Requests a list of available languages and adds them to a list adapter.
+     *
+     * @param key Api key to authorize access for the request
+     * @param ui The base language for the data to be returned in
+     * @param spinner The spinner item that will display the available languages
+     */
     private fun requestLanguages(key: String, ui: String, spinner: Spinner){
         retrofitServiceLangs.getLangs(key, ui).enqueue(object : Callback<Lang> {
+
+            /**
+             * Handles the request response and applys the data to a list adapter.
+             *
+             * @param call The post request
+             * @param response The request response to be handled
+             */
             override fun onResponse(call: Call<Lang>, response: Response<Lang>) {
                 if (response.isSuccessful) {
                     items = response.body()!!.getLangs()!!
@@ -93,6 +112,12 @@ class TranslatorFragment : Fragment() {
                 }
             }
 
+            /**
+             * Handles A request failure.
+             *
+             * @param call The post request
+             * @param t error exception
+             */
             override fun onFailure(call: Call<Lang>, t: Throwable) {
                 Log.e(TAG, "Unable to submit post to API.")
                 Log.e(TAG, t.cause.toString())
@@ -100,9 +125,24 @@ class TranslatorFragment : Fragment() {
         })
     }
 
+    /**
+     * Requests a translation of a given word to a given language.
+     *
+     * @param key Api key to authorize access for the request
+     * @param lang A combination of the selected language code to the current country language code e.g. en-es
+     * @param translatedText A Text view to display the translated text
+     * @param inputText A Edit text to input the word you want to be translated
+     */
     private fun requestTranslation(key: String, lang: String, translatedText: TextView, inputText: EditText){
         val text = inputText.text.toString().trim()
         retrofitServiceTranslator.savePost(key, text, lang).enqueue(object : Callback<Translate> {
+
+            /**
+             * Handles the request response and applys the data to a list adapter.
+             *
+             * @param call The post request
+             * @param response The request response to be handled
+             */
             override fun onResponse(call: Call<Translate>, response: Response<Translate>) {
                 if (response.isSuccessful) {
                     translatedText.text = response.body().toString()
@@ -114,6 +154,12 @@ class TranslatorFragment : Fragment() {
                 }
             }
 
+            /**
+             * Handles A request failure.
+             *
+             * @param call The post request
+             * @param t error exception
+             */
             override fun onFailure(call: Call<Translate>, t: Throwable) {
                 Log.e(TAG, "Unable to submit post to API.")
                 Log.e(TAG, t.cause.toString())

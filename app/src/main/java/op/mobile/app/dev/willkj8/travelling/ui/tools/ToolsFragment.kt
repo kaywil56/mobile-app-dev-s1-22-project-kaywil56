@@ -11,6 +11,11 @@ import androidx.navigation.findNavController
 import op.mobile.app.dev.willkj8.travelling.R
 import op.mobile.app.dev.willkj8.travelling.databinding.FragmentToolsBinding
 
+/**
+ * A Fragment class for *Tools*.
+ *
+ * This class handles logic for the tools feature.
+ */
 class ToolsFragment : Fragment() {
     private lateinit var viewModel: ToolsViewModel
 
