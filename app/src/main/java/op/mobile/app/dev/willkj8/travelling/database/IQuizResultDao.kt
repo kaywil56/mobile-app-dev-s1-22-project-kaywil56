@@ -14,12 +14,21 @@ import kotlinx.coroutines.flow.Flow
  */
 @Dao
 interface IQuizResultDao {
+    /**
+     * This function gets all data from the quiz result DB
+     */
     @Query("SELECT * FROM quiz_result")
     fun getAll(): Flow<List<QuizResult>>
 
+    /**
+     * This function inserts given data into the quiz result DB
+     */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(quiz_result: QuizResult)
 
+    /**
+     * This function all data from the quiz result DB
+     */
     @Query("DELETE FROM quiz_result")
     fun deleteAll()
 }
