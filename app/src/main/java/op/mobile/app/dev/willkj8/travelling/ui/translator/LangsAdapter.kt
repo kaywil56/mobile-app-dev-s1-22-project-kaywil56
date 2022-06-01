@@ -9,7 +9,7 @@ import androidx.annotation.LayoutRes
  *
  * This class handles logic for the languages list adapter.
  *
- * @param context The context for the translator fragment.
+ * @param context The apps current context.
  * @param resource the spinner layout.
  * @param langsList the given list of languages.
  */

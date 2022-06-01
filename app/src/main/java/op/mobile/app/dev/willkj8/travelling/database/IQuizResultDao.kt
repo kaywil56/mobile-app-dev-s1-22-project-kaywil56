@@ -7,6 +7,11 @@ import androidx.room.Query
 import op.mobile.app.dev.willkj8.travelling.model.QuizResult
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * A interface used for the quiz result DB
+ *
+ * controls the DB functionality
+ */
 @Dao
 interface IQuizResultDao {
     @Query("SELECT * FROM quiz_result")

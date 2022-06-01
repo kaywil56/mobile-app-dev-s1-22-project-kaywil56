@@ -15,7 +15,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import op.mobile.app.dev.willkj8.travelling.helpers.settings.SettingsManager
 
-
+/**
+ * A main activity class
+ *
+ * This is the first activity that loads when the app is started
+ */
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration

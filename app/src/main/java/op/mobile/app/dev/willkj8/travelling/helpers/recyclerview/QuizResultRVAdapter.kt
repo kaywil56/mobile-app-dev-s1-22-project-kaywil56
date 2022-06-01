@@ -9,7 +9,11 @@ import op.mobile.app.dev.willkj8.travelling.databinding.RecyclerViewResultItemBi
 
 import op.mobile.app.dev.willkj8.travelling.model.QuizResult
 
-
+/**
+ * A Recycler view adapter class for quiz results.
+ *
+ * This class Allows binding to the quiz results recycler view.
+ */
 class QuizResultRVAdapter:
     ListAdapter<QuizResult, QuizResultRVAdapter.QuizResultRVViewHolder>(DiffCallback) {
     companion object DiffCallback : DiffUtil.ItemCallback<QuizResult>() {

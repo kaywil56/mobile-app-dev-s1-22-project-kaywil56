@@ -13,6 +13,13 @@ import kotlinx.coroutines.flow.map
 import op.mobile.app.dev.willkj8.travelling.R
 import java.io.IOException
 
+/**
+ * A class for managing the apps settings features
+ *
+ * This class manages ui features like dark mode.
+ *
+ * @param context Current context of the app
+ */
 class SettingsManager(val context: Context) {
     private val dataStore: DataStore<Preferences> =
         context.applicationContext.createDataStore(DATA_STORE_NAME)
@@ -29,6 +36,11 @@ class SettingsManager(val context: Context) {
             false -> UIMode.LIGHT
         }
     }
+    /**
+     * This function sets the current UI mode
+     *
+     * @param uiMode either dark or light
+     */
     suspend fun setUIMode(uiMode: UIMode) {
         dataStore.edit {
             it[IS_DARK_MODE] = when (uiMode) {
@@ -37,6 +49,16 @@ class SettingsManager(val context: Context) {
             }
         }
     }
+    /**
+     * This function sets the google map style and set the ui mode to checked
+     *
+     * @param mode ui mode
+     * @param isMainActivity if the function was called from the main activity
+     * @param swUIMode A switch layout element
+     * @param googleMap A google map instance
+     * @param mapStyle A json style object
+     * @param isUIModeChecked if the ui mode has been checked
+     */
     private fun uiModeFeatures(
         mode: Int,
         isMainActivity: Boolean,
@@ -56,6 +78,15 @@ class SettingsManager(val context: Context) {
         }
         swUIMode?.isChecked = isUIModeChecked
     }
+
+    /**
+     * This function sets the checked ui mode
+     *
+     * @param mode ui mode
+     * @param isMainActivity if the function was called from the main activity
+     * @param swUIMode A switch layout element
+     * @param googleMap A google map instance
+     */
     fun setCheckedUIMode(
         uiMode: UIMode?,
         isMainActivity: Boolean,

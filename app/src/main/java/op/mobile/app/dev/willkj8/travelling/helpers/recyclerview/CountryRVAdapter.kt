@@ -10,6 +10,13 @@ import op.mobile.app.dev.willkj8.travelling.databinding.RecyclerViewItemBinding
 import op.mobile.app.dev.willkj8.travelling.helpers.IOnClickListener
 import op.mobile.app.dev.willkj8.travelling.model.Country
 
+/**
+ * A Recycler view adapter class for country's.
+ *
+ * This class Allows binding to the country's recycler view.
+ *
+ * @param listener Custom onclick listener
+ */
 class CountryRVAdapter(private val listener: IOnClickListener) :
     ListAdapter<Country, CountryRVAdapter.CountryRVViewHolder>(DiffCallback) {
     companion object DiffCallback : DiffUtil.ItemCallback<Country>() {
