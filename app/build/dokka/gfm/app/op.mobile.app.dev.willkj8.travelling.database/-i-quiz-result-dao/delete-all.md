@@ -4,3 +4,5 @@
 
 [androidJvm]\
 abstract fun [deleteAll](delete-all.md)()
+
+This function all data from the quiz result DB
